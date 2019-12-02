@@ -62,7 +62,7 @@ pycountry==19.8.18
 pyglottolog==3.0.0
 pygobject==3.20.0
 pyjsparser==2.7.1
-pyOpenSSL==0.15.1
+pyOpenSSL==17.5.0
 pyparsing==2.4.5
 python-dateutil==2.8.1
 pytz==2019.1
