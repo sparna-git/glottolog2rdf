@@ -3,7 +3,7 @@
 
 import logging
 from pyglottolog import Glottolog
-from rdflib import Graph, URIRef, term
+from rdflib import Graph, URIRef
 from rdflib.namespace import RDF
 
 
@@ -26,7 +26,7 @@ class Glottolog2RdfConverter():
         self.log.info("Languoids dictionnary built successfully")
 
         # dict(itertools.islice(languoids, 10))
-        # languoids = {l.id: l for l in itertools.islice(languoids, 10)}
+        # #languoids = {l.id: l for l in itertools.islice(languoids, 10)}
 
         # mode normal :
         # languoids = {}
@@ -52,6 +52,7 @@ class Glottolog2RdfConverter():
             # add the parent
 
         return g
+
 
 if __name__ == "__main__":
     cvt = Glottolog2RdfConverter(glottolog_dir='toto')
