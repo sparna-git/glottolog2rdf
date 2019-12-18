@@ -20,21 +20,22 @@ class Main():
 
         # Now
         start_time = datetime.now().time()
-
-        self.log.info("glottolog2rdf starting")
+        self.log.info("Glottolog2rdf starting")
 
         converter = Glottolog2RdfConverter(glottolog_dir)
         graph = converter.parse_glottolog()
+        self.log.info("Output graph contains "+str(graph.__len__())+" triples")
 
         print(graph.serialize(destination="output.ttl", format='turtle'))
+
         end_time = datetime.now().time()
         self.log.info(
-            "glottolog2rdf executed in " + str(datetime.combine(date.min, end_time) - datetime.combine(date.min, start_time)))
+            "Glottolog2rdf executed in " + str(datetime.combine(date.min, end_time) - datetime.combine(date.min, start_time)))
 
 if __name__ == "__main__":
 
     # logging
-    logname = 'basic.log'
+    logname = 'glottolog2rdf.log'
     logging.basicConfig(filename=logname,
                         filemode='a',
                         format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
@@ -50,4 +51,4 @@ if __name__ == "__main__":
     # main()
     # print("Hello")
     main = Main()
-    main.run('/home/thomas/sparna/00-Clients/MCC/06-OPL/06-Connecteurs/02-Glottolog/glottolog-single-languoid')
+    main.run('samples/glottolog-single-languoid')
