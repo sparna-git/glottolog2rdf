@@ -69,6 +69,8 @@ python3.5 main.py '/path/to/glottolog' output-full-glottolog.ttl
 
 The process takes about 90 minutes to complete, depending on your hardware.
 
+The conversion generates ~ 2.2 million triples.
+
 ## Tests
 
 Usage : `python -m pytest`
